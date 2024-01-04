@@ -1,0 +1,69 @@
+[
+    {
+        "name": "Pix2Vox-F Tensorflow",
+        "id": "pix-project",
+        "img": "../images/projects/pix2vox.png",
+        "date": "November 2022",
+        "link": "/pix2vox",
+        "tags": [
+            "DL",
+            "TensorFlow",
+            "PyTorch",
+            "Python"
+        ],
+        "description": "Pix2Vox-F TensorFlow is a conversion of the Pix2Vox-F model from PyTorch to TensorFlow. The model includes an encoder, decoder, and context-aware fusion model in order to generate a voxel volume from images. "
+    },
+    {
+        "name": "NeRF 101",
+        "id": "nerf-project",
+        "img": "../images/projects/nerf.png",
+        "date": "July-September 2022",
+        "link": "/nerf",
+        "tags": [
+            "CV",
+            "3D Reconstruction",
+            "Python"
+        ],
+        "description": "NeRF 101 is the detailed documentation that records the process of training NeRF (neural radiance field) models synthetically generated Blender data. "
+    },
+    {
+        "name": "Voxel Carving",
+        "id": "voxel-project",
+        "img": "../images/projects/voxel_carving.png",
+        "date": "June 2022",
+        "link": "/voxel",
+        "tags": [
+            "CV",
+            "3D Reconstruction",
+            "Python"
+        ],
+        "description": "Voxel Carving is a 3D reconstruction project that converts images of an object (taken from different camera views) and creates a 3D representation."
+    },
+    {
+        "name": "D@B",
+        "id": "dab-project",
+        "img": "../images/projects/dab.png",
+        "date": "April 2022",
+        "link": "/dab",
+        "tags": [
+            "SWE",
+            "React",
+            "HTML",
+            "CSS"
+        ],
+        "description": "D@B (Dorms at Brown) is a site designed to give Brown students access to information about each dorm on campus (pictures, features, reviews, etc) in order to help them make decisions during the housing process."
+    },
+    {
+        "name": "Under the Sea",
+        "id": "sea-project",
+        "img": "../images/projects/under_sea.png",
+        "date": "December 2021",
+        "link": "/underthesea",
+        "tags": [
+            "Graphics",
+            "C++",
+            "Qt"
+        ],
+        "description": "Under the Sea is a project the displays an underwater scene incorporating features such as procedurally generated terrain, corals, and camera movement along bezier curves."
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "name": "DiVA-360",
+        "id": "diva-project",
+        "img": "../images/research/diva-teaser.png",
+        "link": "https://diva360.github.io/",
+        "conf": "Under Review"
+    },
+    {
+        "name": "MANUS",
+        "id": "manus-project",
+        "img": "../images/research/manus-teaser.png",
+        "link": "https://ivl.cs.brown.edu/research/manus.html",
+        "conf": "Under Review"
+    }
+]

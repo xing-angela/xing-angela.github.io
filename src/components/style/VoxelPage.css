@@ -1,0 +1,103 @@
+#voxel-header:before {
+    height: 141px;
+    border: 0px solid #EDB91C;
+    border-top: 3px solid #EDB91C;
+    border-left: 3px solid #EDB91C;
+    border-bottom: 3px solid #EDB91C;
+}
+
+#voxel-header:before {
+    content: " ";
+    width: 10px;
+    height: 135px;
+    position: absolute;
+}
+
+#voxel-header h1 {
+    letter-spacing: 5px;
+    font-size: 60px;
+    margin-bottom: 0px;
+    margin-left: 15px;
+}
+
+#voxel-header h2 {
+    font-size: 20px;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 5px;
+    margin-bottom: 0px;
+    margin-left: 15px;
+}
+
+.voxel-bracket {
+    width: max-content;
+    padding: 10px;
+    border: 3px solid #EDB91C;
+}
+
+.voxel-bracket h2 {
+    margin: 0px;
+}
+
+.voxel-content {
+    margin-top: 0px;
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/********************** Links **********************/
+.voxel-link a {
+    color: #ffff;
+    text-decoration: none;
+    position: relative;
+}
+
+.voxel-link a:before {
+    content: '';
+    position: absolute;
+    background-color: #EDB91C58;
+    left: 0;
+    bottom: 1px;
+    width: 100%;
+    height: 4px;
+    z-index: 0.5;
+    transition: all .3s ease-in-out;
+}
+
+.voxel-link a:hover:before {
+    bottom: 0;
+    height: 100%;
+}
+
+#resources {
+    height: 67px;
+    padding-left: 40px;
+}
+
+#resources a {
+    float: left;
+    clear: left;
+}
+
+/********************** Results **********************/
+.voxel-result {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.voxel-result img {
+    width: 400px;
+}
+
+/********************** Screen Size Changes **********************/
+@media (max-width: 547px) {
+
+    #voxel-header,
+    #voxel-header:before {
+        height: 205px;
+    }
+}

@@ -1,0 +1,81 @@
+#underwater-header:before {
+    height: 141px;
+    border: 0px solid #B989C6;
+    border-top: 3px solid #B989C6;
+    border-left: 3px solid #B989C6;
+    border-bottom: 3px solid #B989C6;
+}
+
+#underwater-header:before {
+    content: " ";
+    width: 10px;
+    height: 135px;
+    position: absolute;
+}
+
+#underwater-header h1 {
+    letter-spacing: 5px;
+    font-size: 60px;
+    margin-bottom: 0px;
+    margin-left: 15px;
+}
+
+#underwater-header h2 {
+    font-size: 20px;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 5px;
+    margin-bottom: 0px;
+    margin-left: 15px;
+}
+
+.underwater-bracket {
+    width: max-content;
+    padding: 10px;
+    border: 3px solid #B989C6;
+}
+
+.underwater-bracket h2 {
+    margin: 0px;
+}
+
+.underwater-content {
+    margin-top: 0px;
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/********************** Results **********************/
+.underwater-result {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.underwater-single-figure {
+    width: 500px;
+    margin: 20px;
+}
+
+.underwater-result img {
+    width: 500px;
+}
+
+.caption {
+    text-align: center;
+    width: max-content;
+    margin: 0px auto 15px auto;
+    font-size: 18px;
+}
+
+/********************** Screen Size Changes **********************/
+@media (max-width: 550px) {
+
+    #underwater-header,
+    #underwater-header:before {
+        height: 205px;
+    }
+}

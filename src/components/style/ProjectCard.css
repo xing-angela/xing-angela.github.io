@@ -1,0 +1,67 @@
+.project {
+    margin: 12px;
+    width: 400px;
+    text-align: center;
+    border: 5px solid #ffff;
+}
+
+.project-link {
+    text-decoration: none;
+    color: #ffff;
+    transition: 1s ease;
+}
+
+.project-link img {
+    max-width: 70%;
+    border-bottom: 5px solid #ffff;
+}
+
+.project-link h2 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.project-link h3 {
+    margin: 0px;
+}
+
+.tags {
+    display: flex;
+    justify-content: center;
+}
+
+.tags div {
+    padding: 3px;
+    width: fit-content;
+    margin: 5px 5px 0px 5px;
+    border: 1px solid #ffff;
+}
+
+.project-link p {
+    font-size: 1em;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: justify;
+    margin: 5px auto 10px auto;
+}
+
+/********************** Projects Hover **********************/
+#pix-project:hover {
+    box-shadow: inset 99999px 99999px 99999px #879A5B58;
+}
+
+#nerf-project:hover {
+    box-shadow: inset 99999px 99999px 99999px #89BAB758;
+}
+
+#voxel-project:hover {
+    box-shadow: inset 99999px 99999px 99999px #EDB91C58;
+}
+
+#dab-project:hover {
+    box-shadow: inset 99999px 99999px 99999px #ff575758;
+}
+
+#sea-project:hover {
+    box-shadow: inset 99999px 99999px 99999px #B989C658;
+}

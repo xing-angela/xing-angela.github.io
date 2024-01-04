@@ -1,0 +1,96 @@
+#pix-header:before {
+    height: 141px;
+    border: 0px solid #879A5B;
+    border-top: 3px solid #879A5B;
+    border-left: 3px solid #879A5B;
+    border-bottom: 3px solid #879A5B;
+}
+
+#pix-header:before {
+    content: " ";
+    width: 10px;
+    height: 135px;
+    position: absolute;
+}
+
+#pix-header h1 {
+    letter-spacing: 5px;
+    font-size: 60px;
+    margin-bottom: 0px;
+    margin-left: 15px;
+}
+
+#pix-header h2 {
+    font-size: 20px;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 5px;
+    margin-bottom: 0px;
+    margin-left: 15px;
+}
+
+.pix-bracket {
+    width: max-content;
+    padding: 10px;
+    border: 3px solid #879A5B;
+}
+
+.pix-bracket h2 {
+    margin: 0px;
+}
+
+.pix-content {
+    margin-top: 0px;
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/********************** Links **********************/
+.pix-link a {
+    color: #ffff;
+    text-decoration: none;
+    position: relative;
+}
+
+.pix-link a:before {
+    content: '';
+    position: absolute;
+    background-color: #879a5b6d;
+    left: 0;
+    bottom: 1px;
+    width: 100%;
+    height: 4px;
+    z-index: 0.5;
+    transition: all .3s ease-in-out;
+}
+
+.pix-link a:hover:before {
+    bottom: 0;
+    height: 100%;
+}
+
+/********************** Results **********************/
+.pix-result {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pix-single-figure {
+    width: 250px;
+    margin: 20px;
+}
+
+.pix-result img {
+    width: 250px;
+}
+
+.caption {
+    text-align: center;
+    width: max-content;
+    margin: 0px auto 15px auto;
+    font-size: 18px;
+}

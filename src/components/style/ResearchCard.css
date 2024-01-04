@@ -1,0 +1,48 @@
+.research {
+    margin: 12px;
+    width: 400px;
+    text-align: center;
+    border: 5px solid #ffff;
+}
+
+.research-link {
+    text-decoration: none;
+    color: #ffff;
+    transition: 1s ease;
+}
+
+.research-link img {
+    max-width: 70%;
+    border-bottom: 5px solid #ffff;
+}
+
+.research-link h2 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.research-link h3 {
+    margin: 0px;
+}
+
+.conf {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.conf div {
+    padding: 3px;
+    width: fit-content;
+    margin: 5px 5px 0px 5px;
+    border: 1px solid #ffff;
+}
+
+/********************** Projects Hover **********************/
+#diva-project:hover {
+    box-shadow: inset 99999px 99999px 99999px #ff575758;
+}
+
+#manus-project:hover {
+    box-shadow: inset 99999px 99999px 99999px #879A5B58;
+}
