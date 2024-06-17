@@ -1,1 +1,712 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/logo.png"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="/logo.png"/><title>Angela Xing</title><script defer="defer" src="/static/js/main.07bbf610.js"></script><link href="/static/css/main.b1b7b6dc.css" rel="stylesheet"></head><body><div id="root"></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Angela Xing</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/fontawesome.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/brands.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/@tabler/icons@1.50.0/iconfont/tabler-icons.min.css"> -->
+
+    <!-- puffins https://icons8.com/icon/14862/puffin-bird -->
+    <link id="favicon" rel="icon" href="assets/dino.png">
+    <!-- <link id="favicon" rel="icon"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADKElEQVR4nO2ZS2gUQRCGP1/42KyC3nygHtQooiLoRsVD8KBeFVHEi9F48yK5BeMlIgjiY0UJiCdRVISgnsSohwTxEVRQWSXiM6CYQBKzuhrNykAttMvs9PTs9GQW80Oxw/T0bH3T1dU9NTCq/0vTgTqgFcgAg0BeY9+Bt8AlYCswbiQBJgONQL8Px3X2Elg7EhCzgMchAORlZJzfIWB31BAfQ4LIA5OAY3I8DGyPKpzCGom8WEENyvxZYhuksYQzP4ATwCpgCpAAUsApIOcTxNE5OXcfGIvF7NTn4sgnYJlHvxVyjR+QqUrY7rAFUufiRE4DocLoRiZfZC9sgbS6/NlJl+sGgGvAgqLzaUOQjC2QVy5/VuNyXaGtVzJcQTU+QisBdMn5fbZABgJkpMtK/6QPkPNy7hkw3hZIkNTaZwByROmz2BZEKZA1Bv1LhVYVcEFZ3TdhWW5OOOuEX6U1W5T+KCAo4YSTUpf7TL8/PULwYRSreUGlnOjWwOgWxF4Jr8jkNalzEmYpSaFVMn/SmpHIix2NC0hQey0TfCgOoVWONQJn5bilUkGGZb2YC/wBsrIxrTiQm8q92+TctkoDyRZtKgsvVacrCeS3y7vGeml7UCkgTqlop8u9Z0v7u0oAuQFUe9QCCiEXO5APMombgKWaeyfjCtJjeO9qZQMZKxDnbdJEtUr1JFYgdw3v3ST9jpt06gh5TXCzM4YgndJvi0mnMIrOOqs38GehbFf6ZOfsW88jAJlv4M9Vj9KSp1osQzwx8CUlo+HUe+cRMEPYsv0+/Zih1LAOEUBjgHZLEN1SxNZpAnBH+jySTwuBtFLeysIG2eVzJNoUcLUaGUh7JD7Dgrjoc050yfXvwyzEHZBtdbkQt4CJmhR7RXlwnbLjDVUbgM9lQDh9NwMzZRebkL1TrazYnQqAU1E5KHPEipJSCOgxAPhlcO032X7MISI5T3SjfEbrkHgeFMtIpmkGVksppzhjZeUz3Jeitjc2q+vlqN7lqR+W1O5or0t7s9IeCy3y+FZyHVgnI1OqfRox0VPNfNCl9HZionsaR79q2m+PNMCoRsW/+gsWW3W3eLQS3QAAAABJRU5ErkJggg=="> -->
+    <!-- <link id="favicon" rel="icon" href="data:image/png;base64,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"> -->
+
+    <!-- random emojis -->
+    <!-- <link id="favicon" rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪬</text></svg>">
+    <script>
+        // credits: https://twitter.com/LeaVerou/status/1241619866475474946/
+        // https://css-tricks.com/emoji-as-a-favicon/
+        function randomEmoji(tag) {
+            // this.emojis = ["🤛", "🤞", "✌️", "🫰", "🤟", "🤘", "👉", "☝️", "🖖", "👋"];
+            this.emojis = ["🫡", "🫨", "🙃", "😂", "😮", "😅", "🤨", "🫢", "🫠", "😴", "😬", "😄", "😆", "😶"];
+            this.tag = tag;
+            i = Math.floor(Math.random() * (this.emojis.length));
+            newFavicon = faviconTemplate(this.emojis[i]);
+            this.tag.href = `data:image/svg+xml,${newFavicon}`
+        }
+        function faviconTemplate(icon) {
+            return `
+                <svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22>
+                <text y=%22.9em%22 font-size=%2290%22>
+                    ${icon}
+                </text>
+                </svg>
+            `.trim();
+        }
+        randomEmoji(document.getElementById("favicon"))
+    </script> -->
+
+    <script>
+        console.log({ 'string': emscramble.string, 'indices': emscramble.indices.toString() })
+        // also used by https://www.cs.cmu.edu/~dpathak/
+
+        // scramble.js
+        //
+        // 2011, Jeff Donahue (http://jeffdonahue.com/).
+        // license: you can use this if you want to i guess
+
+        function scrambledString(tag, objName, initScrambledString, initScrambledStringIndices) {
+            this.tag = tag;
+            this.objName = objName;
+            this.string = initScrambledString;
+            this.indices = initScrambledStringIndices;
+            this.rescramble = rescramble;
+            this.initAnimatedBubbleSort = initAnimatedBubbleSort;
+            this.bubbleSortStep = bubbleSortStep;
+            this.bubbleSortBookmark = 0;
+
+            this.rescramble();
+            this.tag.innerHTML = this.string + ' <a href="#" onClick="' + this.objName + '.initAnimatedBubbleSort();return false;">unscramble</a>';
+        }
+
+        function rescramble() {
+            for (i = 0; i < this.indices.length; i++) {
+                indexToMove = Math.floor(Math.random() * (this.indices.length - i));
+                charIndexRemoved = this.indices.splice(indexToMove, 1);
+                this.indices = this.indices.concat(charIndexRemoved);
+                scrambledStringTemp = this.string.substring(0, indexToMove) +
+                    this.string.substring(indexToMove + 1) +
+                    this.string.substring(indexToMove, indexToMove + 1);
+                this.string = scrambledStringTemp;
+            }
+        }
+
+        function initAnimatedBubbleSort() {
+            this.interval = setInterval(this.objName + '.bubbleSortStep()', 2);
+        }
+
+        function bubbleSortStep() {
+            if (this.bubbleSortBookmark >= this.indices.length - 1) {
+                this.bubbleSortBookmark = 0;
+            }
+            for (i = this.bubbleSortBookmark; i < this.indices.length - 1; i++) {
+                if (i == 0) {
+                    this.changed = 0;
+                }
+                if (this.indices[i] > this.indices[i + 1]) {
+                    this.changed = 1;
+                    tempIndex = this.indices[i];
+                    this.indices[i] = this.indices[i + 1];
+                    this.indices[i + 1] = tempIndex;
+                    tempArrange = this.string.substring(0, i) +
+                        this.string.substring(i + 1, i + 2) +
+                        this.string.substring(i, i + 1) +
+                        this.string.substring(i + 2);
+                    this.string = tempArrange;
+                    this.tag.innerHTML = this.string;
+                    this.bubbleSortBookmark = i;
+                    break;
+                }
+            }
+            this.bubbleSortBookmark = i;
+            if (!this.changed) {
+                clearInterval(this.interval);
+            }
+        }
+    </script>
+
+    <!--
+        Colors chosen from https://personal.sron.nl/~pault/data/colourschemes.pdf,
+        after seeing https://twitter.com/andrewkuznet/status/1433129701476732929.
+    -->
+    <style type="text/css">
+        :root {
+            --black: rgb(29, 29, 31);
+            /* #1d1d1f */
+            --cyan: rgb(102, 204, 238);
+            --blue: rgb(68, 119, 170);
+            --gray: rgb(187, 187, 187);
+            --red: rgb(238, 102, 119);
+            --reda: rgba(238, 102, 119, 0.66);
+            --yellow: rgb(204, 187, 68);
+            --green: rgb(34, 136, 51);
+
+            --darkblue: rgb(0, 68, 136);
+            --darkbluea: rgba(0, 68, 136, 0.66);
+            /* --darkerblue: rgb(34, 34, 85); */
+            --milk: rgb(253, 255, 245);
+            --darkgray: #6e6e6e;
+            --shadow: 3px 3px 9px var(--gray);
+        }
+
+        /*
+            1rem = 10px
+            https://www.aleksandrhovhannisyan.com/blog/respecting-font-size-preferences-rems-62-5-percent/
+        */
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-size: 1.6rem;
+        }
+
+        html,
+        body {
+            margin: 0 auto;
+            height: 100%;
+        }
+
+        body {
+            padding: 20px;
+            line-height: 1.5;
+            color: var(--black);
+            /* background-color: rgb(250, 250, 250); */
+            background-color: var(--milk);
+            /* font-family: 'Open Sans', sans-serif; */
+            /* System font stack https://css-tricks.com/snippets/css/system-font-stack/ */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            -webkit-text-size-adjust: none;
+            text-size-adjust: none;
+        }
+
+        div {
+            display: block;
+        }
+
+        .container {
+            max-width: 800px;
+            min-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 20px;
+        }
+
+        /*
+            Hyperlink underlining, multiline on hover
+            https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/
+            https://css-tricks.com/styling-underlines-web/
+        */
+        a {
+            text-decoration: none;
+            color: var(--blue);
+        }
+
+        a:hover,
+        a:hover>i,
+        a:focus,
+        a:focus>i {
+            color: var(--darkblue);
+        }
+
+        a {
+            /* transition: all 0.1s ease-in; */
+            background-image: linear-gradient(var(--darkbluea), var(--darkbluea));
+            background-position: 0% 100%;
+            background-repeat: no-repeat;
+            background-size: 0% 1.5px;
+        }
+
+        a:hover,
+        a:focus {
+            background-size: 100% 1.5px;
+            /* border-bottom: 1.5px solid rgb(68, 119, 170); */
+        }
+
+        p {
+            display: inline;
+        }
+
+        footer {
+            margin-top: 20px;
+            /* padding-top: 20px; */
+            /* border-top: 0.75px solid var(--gray); */
+            text-align: center;
+            color: var(--darkgray);
+        }
+
+        .menu {
+            margin-right: 5%;
+        }
+
+        .nav {
+            float: right;
+        }
+
+        .nav>a:not(:last-child) {
+            margin-right: 20px;
+        }
+
+        .site-name {
+            font-weight: 500;
+            font-size: 2.8rem;
+        }
+
+        b {
+            font-weight: 600;
+        }
+
+        h3 {
+            margin-bottom: 0;
+            font-weight: 500;
+            /* border-bottom: 0.75px solid var(--gray); */
+            /* text-transform: capitalize; */
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            margin: auto;
+            /* center in div */
+            border-radius: .25rem;
+        }
+
+        hr {
+            border: 0;
+            width: 125%;
+            margin-left: -12.5%;
+            height: 1.5px;
+            background-image: linear-gradient(to right,
+                    rgba(0, 0, 0, 0),
+                    rgba(187, 187, 187, 0.2),
+                    rgba(29, 29, 31, 0.15),
+                    rgba(187, 187, 187, 0.2),
+                    rgba(0, 0, 0, 0));
+        }
+
+        .indent {
+            padding-left: 1.8rem;
+        }
+
+        .profile-img {
+            float: right;
+            padding: 20px 20px 20px 20px;
+            width: 25%;
+        }
+
+        .profile-img>img {
+            box-shadow: var(--shadow);
+            -moz-box-shadow: var(--shadow);
+            -webkit-box-shadow: var(--shadow);
+        }
+
+        .about-container {
+            max-width: 75%;
+            overflow: hidden;
+        }
+
+        .accounts-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .accounts-list>li {
+            list-style-type: none;
+            align-items: center;
+        }
+
+        .accounts-list>li>svg {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+
+        .bio {}
+
+        .bio>p {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+        }
+
+        .bio>p:not(:last-child) {
+            margin-bottom: 0.67rem;
+        }
+
+        /*
+            Not good enough right now
+            https://maxwellforbes.com/posts/web-justified-text
+            http://clagnut.com/blog/2395/
+        */
+        .justify {
+            /* text-align: justify;
+            text-justify: inter-word; */
+        }
+
+        .research-tag {
+            font-weight: 500;
+        }
+
+        .news-container {}
+
+        .news-date {
+            color: var(--red);
+            font-weight: 500;
+            width: 10%;
+            min-width: 100px;
+            display: inline-block;
+        }
+
+        .news-date+div {
+            display: inline-block;
+        }
+
+        .pub {
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .pub-visual {
+            float: left;
+            margin: 5px 20px 10px 5px;
+            width: 33%;
+            background-color: white !important;
+            box-shadow: var(--shadow);
+            -moz-box-shadow: var(--shadow);
+            -webkit-box-shadow: var(--shadow);
+        }
+
+        .pub-visual>img {
+            height: 15rem;
+        }
+
+        .pub-info {
+            font-size: 1.6rem;
+            display: table-cell;
+            /* equal height as pub-visual, prevent from overflowing */
+            padding-top: 5px;
+        }
+
+        .pub-title {
+            font-weight: 500;
+            font-size: 2.0rem;
+            line-height: 2.2rem;
+            padding-bottom: 5px;
+        }
+
+        .pub-booktitle>p {
+            /* opacity: 0.6; */
+            color: var(--darkgray);
+        }
+
+        .pub-links {
+            margin-top: 10px;
+        }
+
+        .pub-highlight {
+            background-color: var(--red);
+            color: white;
+            padding: 0 3px 2px 3px;
+            font-style: normal !important;
+            border-radius: 0.05em;
+        }
+
+        /* 
+            https://kittygiraudel.com/2020/12/10/accessible-icon-links/
+            https://www.scottohara.me/blog/2019/05/22/contextual-images-svgs-and-a11y.html
+            https://css-tricks.com/accessible-svgs/
+        */
+        .screenreader {
+            border: 0;
+            clip: rect(1px, 1px, 1px, 1px);
+            -webkit-clip-path: inset(50%);
+            clip-path: inset(50%);
+            height: 1px;
+            overflow: hidden;
+            margin: -1px;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+            white-space: nowrap;
+        }
+
+        @media only screen and (min-width: 992px) {
+            .container {
+                max-width: 850px;
+            }
+        }
+
+        @media only screen and (max-width: 600px) and (min-width: 319px) {
+
+            .pub-visual,
+            .pub-info {
+                float: none;
+                padding: 10px 5px 10px 0;
+                width: 100%;
+            }
+
+            .pub-visual {
+                width: 94% !important;
+            }
+
+            .pub-visual>img {
+                height: auto;
+                width: 75%;
+            }
+
+            /* photo does not have white background, so fit to fill */
+            .photo {
+                padding: 0 !important;
+            }
+
+            .photo>img {
+                width: 100% !important;
+            }
+
+            .menu,
+            .about-container {
+                max-width: 95%;
+            }
+
+            .about-container {
+                overflow: unset;
+            }
+
+            .accounts-list {
+                width: 60%;
+                min-height: 100px;
+            }
+
+            .news-date {
+                display: block;
+            }
+
+            .profile-img {
+                display: inline-block;
+                right: 5px;
+                max-height: 100px;
+                margin-top: -0.6rem;
+            }
+        }
+    </style>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7FD4KVVNH7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-7FD4KVVNH7');
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <header class="menu">
+            <!-- <div class="nav">
+                <a href="/about">about /</a>
+                <a href="/notes">notes /</a>
+            </div> -->
+            <div class="site-name">
+                Angela Xing
+            </div>
+            <!--
+            llama font https://llamafont.com
+            panda spots https://www.dafont.com/panda-spots.font
+            zoological https://www.swiss-miss.com/2009/06/zoological-typeface.html
+            nyc tree font https://www.katieholten.com/new-york-city-tree-alphabet
+        -->
+            <hr>
+        </header>
+
+        <div>
+            <div class="profile-img">
+                <img src="assets/profile.jpeg" alt="" />
+            </div>
+            <div class="about-container">
+                <ul class="accounts-list">
+                    <li>
+                        <svg aria-hidden="true" height="20" width="20" xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-brand-twitter" viewBox="0 0 24 24" stroke-width="1.6"
+                            stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path
+                                d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z">
+                            </path>
+                        </svg>
+                        <!-- <svg aria-hidden="true" height="26" width="26" xmlns="http://www.w3.org/2000/svg" class="icon icon-color-hand-drawn" x="0px" y="0px" viewBox="0 0 100 100" stroke-width="1.8" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path fill="#78a1d1" d="M89,26c0,0-4.774,1.394-9.157,1.491c-0.075-0.191-0.136-0.388-0.218-0.576	C85.019,23.428,86.5,19,86.5,19s-5.276,2.871-10.191,2.989C73.312,18.915,69.132,17,64.5,17C55.387,17,48,24.387,48,33.5	c0,1.514,0.221,2.973,0.603,4.365C25.768,36.375,14.75,22.141,13.193,20C11.798,22.421,11,25.505,11,28.5	c0,6.163,3.662,11.981,9,14.5c-6,0-9-2-9-2c0,8.502,6.627,15.486,15,16c-1.882,0.668-3.889,1-6,1c-0.907,0-2.213-0.074-3.084-0.203	L17,58c2.669,6.311,9.747,10.797,17,11c-5.571,4.98-13.44,8-21.5,8H11c6,4,14.111,6,22.5,6C59.734,83,81,61.734,81,35.5	c0,0-0.026-2.441-0.035-2.662C86,30,89,26,89,26z"></path><path fill="#1f212b" d="M33.5,84c-8.901,0-17.088-2.19-23.055-6.168c-0.367-0.244-0.53-0.7-0.402-1.122	C10.17,76.288,10.56,76,11,76h1.5c6.9,0,13.688-2.247,18.981-6.227c-6.783-1.044-12.906-5.48-15.402-11.384l-0.087-0.211	c-0.137-0.332-0.085-0.714,0.136-0.997c0.221-0.284,0.578-0.426,0.935-0.374C17.916,56.934,19.186,57,20,57	c0.362,0,0.721-0.011,1.077-0.031C14.587,54.55,10,48.272,10,41c0-0.369,0.203-0.708,0.528-0.882	c0.324-0.175,0.718-0.156,1.026,0.05c0.018,0.011,1.556,0.992,4.572,1.513C12.357,38.497,10,33.597,10,28.5	c0-3.153,0.848-6.434,2.327-9c0.169-0.293,0.475-0.481,0.813-0.499c0.345-0.022,0.663,0.137,0.862,0.41	c1.897,2.608,12.269,15.475,33.317,17.352C47.107,35.67,47,34.578,47,33.5C47,23.851,54.851,16,64.5,16	c4.6,0,8.917,1.762,12.206,4.972c4.49-0.256,9.268-2.824,9.316-2.85c0.358-0.195,0.804-0.152,1.12,0.112	c0.314,0.264,0.437,0.694,0.306,1.083c-0.057,0.169-1.277,3.702-5.326,7.015c3.434-0.379,6.56-1.281,6.598-1.292	c0.411-0.119,0.856,0.037,1.103,0.391c0.245,0.354,0.236,0.825-0.022,1.169c-0.123,0.164-2.98,3.932-7.825,6.809	c0.012,0.8,0.025,2.081,0.025,2.081C82,62.243,60.243,84,33.5,84z M14.605,77.935C19.861,80.572,26.434,82,33.5,82	C59.141,82,80,61.141,80,35.5c0,0-0.025-2.404-0.034-2.623c-0.015-0.375,0.182-0.727,0.508-0.911	c2.363-1.332,4.271-2.943,5.601-4.237c-1.757,0.356-4.018,0.712-6.209,0.761c-0.008,0-0.016,0-0.022,0	c-0.41,0-0.78-0.251-0.931-0.634l-0.097-0.261c-0.034-0.094-0.067-0.189-0.107-0.281c-0.195-0.449-0.037-0.974,0.374-1.24	c2.518-1.627,4.136-3.479,5.125-4.923c-2.062,0.829-5.004,1.768-7.874,1.836c-0.313,0.024-0.546-0.102-0.74-0.301	C72.646,19.665,68.706,18,64.5,18C55.953,18,49,24.953,49,33.5c0,1.348,0.191,2.728,0.567,4.101	c0.085,0.312,0.015,0.646-0.189,0.896c-0.205,0.25-0.525,0.382-0.84,0.366c-20.368-1.33-31.542-12.596-35.164-17.002	C12.492,23.877,12,26.222,12,28.5c0,5.753,3.386,11.217,8.427,13.596c0.423,0.2,0.651,0.667,0.549,1.123	C20.874,43.675,20.468,44,20,44c-3.725,0-6.363-0.743-7.911-1.359c0.783,7.179,6.639,12.911,13.972,13.361	c0.475,0.029,0.863,0.388,0.929,0.858s-0.208,0.923-0.656,1.082C24.357,58.645,22.226,59,20,59c-0.395,0-0.899-0.014-1.425-0.044	C21.45,64.167,27.587,67.82,34.028,68c0.41,0.012,0.771,0.271,0.911,0.656c0.141,0.385,0.033,0.816-0.272,1.089	C29.301,74.542,22.085,77.469,14.605,77.935z"></path><path fill="#1f212b" d="M52.569,35c-0.256,0-0.475-0.196-0.497-0.457l-0.021-0.218C52.025,34.049,52,33.772,52,33.5	c0-0.276,0.224-0.5,0.5-0.5s0.5,0.224,0.5,0.5c0,0.241,0.024,0.486,0.048,0.73l0.021,0.226c0.024,0.275-0.18,0.518-0.454,0.542	C52.6,35,52.584,35,52.569,35z"></path><path fill="#1f212b" d="M52.681,32c-0.028,0-0.057-0.002-0.085-0.007c-0.271-0.046-0.455-0.305-0.409-0.577	c0.185-1.086,0.509-2.138,0.965-3.126c0.117-0.251,0.415-0.36,0.663-0.245c0.251,0.116,0.36,0.413,0.245,0.664	c-0.419,0.908-0.718,1.875-0.887,2.874C53.131,31.828,52.92,32,52.681,32z"></path><path fill="#1f212b" d="M55.581,26c-0.119,0-0.238-0.042-0.334-0.128c-0.205-0.185-0.223-0.5-0.038-0.706	C57.586,22.519,60.973,21,64.5,21c3.073,0,6.033,1.141,8.335,3.212c0.205,0.185,0.222,0.501,0.037,0.706	c-0.187,0.206-0.501,0.223-0.707,0.037C70.048,23.05,67.326,22,64.5,22c-3.244,0-6.359,1.397-8.547,3.834	C55.854,25.944,55.718,26,55.581,26z"></path><path fill="#1f212b" d="M33.5,79c-0.205,0-0.407-0.008-0.609-0.016l-0.401-0.014c-0.276-0.006-0.495-0.234-0.49-0.51	c0.006-0.276,0.236-0.474,0.51-0.49l0.42,0.014C33.119,77.992,33.308,78,33.5,78c0.276,0,0.5,0.224,0.5,0.5S33.776,79,33.5,79z"></path><path fill="#1f212b" d="M47.5,76.647c-0.208,0-0.401-0.13-0.473-0.337c-0.09-0.261,0.048-0.546,0.31-0.636	c10.88-3.758,19.9-11.917,24.746-22.385c0.116-0.251,0.413-0.36,0.664-0.244s0.359,0.414,0.244,0.664	c-4.96,10.714-14.192,19.063-25.328,22.91C47.609,76.639,47.554,76.647,47.5,76.647z"></path><path fill="#1f212b" d="M36.5,78.884c-0.26,0-0.48-0.201-0.499-0.465c-0.019-0.275,0.189-0.515,0.464-0.534	c1.671-0.116,3.333-0.33,4.942-0.634c0.272-0.051,0.533,0.127,0.584,0.398s-0.127,0.533-0.398,0.584	c-1.646,0.312-3.348,0.53-5.058,0.649C36.523,78.884,36.511,78.884,36.5,78.884z"></path>
+                    </svg> -->
+                        <span class="screenreader">twitter</span>
+
+                        <a href="https://x.com/_angelaxing">@_angelaxing</a>
+                    </li>
+                    <li>
+                        <svg aria-hidden="true" height="20" width="20" xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-brand-github" viewBox="0 0 24 24" stroke-width="1.6"
+                            stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path
+                                d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5">
+                            </path>
+                        </svg>
+                        <!-- <svg aria-hidden="true" height="26" width="26" xmlns="http://www.w3.org/2000/svg" class="icon icon-color-hand-drawn" x="0px" y="0px" viewBox="10 10 80 80" stroke-width="1.8" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="50" cy="50" r="30" fill="#4e6e91"></circle><path fill="#6693c1" d="M50,83c-18.196,0-33-14.804-33-33s14.804-33,33-33s33,14.804,33,33S68.196,83,50,83z M50,22 c-15.439,0-28,12.561-28,28s12.561,28,28,28s28-12.561,28-28S65.439,22,50,22z"></path><path fill="#eeecd9" d="M69.457,49.039c0-3.321-1.305-6.334-3.419-8.573c0.396-2.203,0.351-5.301-0.538-7.966 c-4.475,0-8.114,3.447-8.702,4H43.994c-0.589-0.552-4.019-4-8.494-4c-0.8,2.401-1.087,5.233-0.846,7.295 c-2.518,2.286-4.108,5.575-4.108,9.245c0,6.908,5.599,12.459,12.507,12.459H45.5c-2.003,0.917-3.635,2.756-4,5 c-2,0-4.864-0.182-6.181-2.158c-2.46-3.69-3.59-3.69-4.819-3.69c-1.23,0-1.33,1.23-0.1,2.46s1.23,1.23,2.46,3.69 C33.872,68.828,36.5,70.5,41.5,70.5v6.6c0,0,6.346,1.4,8.5,1.4s8.5-1.4,8.5-1.4l0-9.445c0-2.718-1.681-5.092-4-6.155h2.449 C63.858,61.5,69.457,55.947,69.457,49.039z"></path><path fill="#1f212b" d="M50,85c-19.299,0-35-15.701-35-35s15.701-35,35-35s35,15.701,35,35S69.299,85,50,85z M50,17 c-18.196,0-33,14.804-33,33s14.804,33,33,33s33-14.804,33-33S68.196,17,50,17z"></path><path fill="#1f212b" d="M50,79c-15.99,0-29-13.009-29-29s13.01-29,29-29s29,13.009,29,29c0,2.925-0.435,5.812-1.291,8.582 c-0.082,0.263-0.364,0.411-0.625,0.33c-0.264-0.082-0.412-0.361-0.33-0.625C77.581,55.612,78,52.825,78,50 c0-15.439-12.561-28-28-28S22,34.561,22,50s12.561,28,28,28c5.856,0,11.464-1.788,16.217-5.171c0.225-0.16,0.536-0.107,0.697,0.117 c0.16,0.225,0.107,0.537-0.117,0.697C61.873,77.147,56.065,79,50,79z"></path><path fill="#1f212b" d="M68.631,72.068c-0.14,0-0.279-0.059-0.378-0.173c-0.181-0.209-0.158-0.525,0.051-0.706 c0.739-0.638,1.452-1.324,2.122-2.037c0.188-0.202,0.505-0.21,0.706-0.023c0.201,0.189,0.212,0.505,0.023,0.707 c-0.693,0.739-1.433,1.449-2.197,2.11C68.863,72.028,68.747,72.068,68.631,72.068z"></path><path fill="#1f212b" d="M72.494,68.002c-0.107,0-0.216-0.035-0.308-0.105c-0.218-0.17-0.257-0.484-0.087-0.702 c1.649-2.118,2.982-4.452,3.963-6.938c0.101-0.258,0.392-0.382,0.648-0.282c0.257,0.102,0.383,0.392,0.281,0.648 c-1.015,2.575-2.396,4.993-4.104,7.186C72.79,67.936,72.643,68.002,72.494,68.002z"></path><path fill="#1f212b" d="M58.5,77.6c-0.276,0-0.5-0.224-0.5-0.5v-9.445c0-2.431-1.456-4.668-3.708-5.701 c-0.214-0.098-0.331-0.332-0.28-0.561C54.062,61.164,54.265,61,54.5,61h2.449c6.621,0,12.008-5.366,12.008-11.961 c0-3.064-1.166-5.987-3.282-8.229c-0.109-0.115-0.157-0.275-0.129-0.432c0.333-1.854,0.39-4.725-0.409-7.37 c-3.682,0.162-6.795,2.725-7.987,3.848C57.057,36.943,56.925,37,56.798,37H43.993c-0.127,0-0.249-0.048-0.342-0.135l-0.092-0.087 c-3.078-2.927-5.829-3.686-7.697-3.77c-0.662,2.162-0.941,4.762-0.712,6.729c0.019,0.16-0.042,0.319-0.161,0.428 c-2.506,2.275-3.943,5.51-3.943,8.875C31.046,55.635,36.433,61,43.053,61H45.5c0.235,0,0.438,0.164,0.488,0.394 c0.051,0.229-0.066,0.463-0.28,0.561c-1.974,0.904-3.397,2.676-3.715,4.625C41.954,66.822,41.745,67,41.5,67 c-2.333,0-5.191-0.271-6.598-2.38c-2.311-3.467-3.28-3.467-4.403-3.467c-0.14,0-0.385,0.023-0.448,0.178 c-0.086,0.206,0.031,0.756,0.702,1.428c1.287,1.287,1.311,1.335,2.554,3.82C34.409,68.785,37.319,70,41.5,70 c0.276,0,0.5,0.224,0.5,0.5v6.6c0,0.276-0.224,0.5-0.5,0.5S41,77.376,41,77.1v-6.105c-5.797-0.131-7.866-2.525-8.588-3.969 c-1.194-2.387-1.194-2.387-2.366-3.56c-0.869-0.869-1.213-1.81-0.919-2.518c0.209-0.505,0.709-0.795,1.372-0.795 c1.588,0,2.81,0.272,5.235,3.912c1.069,1.604,3.359,1.9,5.356,1.932c0.362-1.545,1.309-2.965,2.63-3.997h-0.668 c-7.172,0-13.007-5.813-13.007-12.959c0-3.562,1.485-6.988,4.084-9.442c-0.209-2.203,0.128-4.956,0.896-7.257 C35.094,32.138,35.285,32,35.5,32c2.036,0,5.192,0.696,8.692,4h12.409c1.427-1.311,4.847-4,8.898-4 c0.215,0,0.406,0.138,0.475,0.342c0.935,2.802,0.928,5.901,0.598,7.965c2.185,2.404,3.385,5.495,3.385,8.732 C69.957,56.186,64.122,62,56.949,62h-0.693C57.963,63.368,59,65.442,59,67.655V77.1C59,77.376,58.776,77.6,58.5,77.6z"></path><path fill="#1f212b" d="M34.238,45.97c-0.063,0-0.127-0.012-0.188-0.037c-0.256-0.104-0.379-0.396-0.274-0.651 c0.476-1.167,1.167-2.226,2.057-3.148c0.192-0.198,0.509-0.204,0.707-0.013c0.199,0.192,0.205,0.508,0.014,0.707 c-0.802,0.831-1.425,1.783-1.852,2.831C34.622,45.853,34.436,45.97,34.238,45.97z"></path><path fill="#1f212b" d="M33.66,51.021c-0.241,0-0.454-0.176-0.493-0.422c-0.08-0.51-0.121-1.034-0.121-1.558 c0-0.533,0.042-1.067,0.124-1.59c0.044-0.273,0.305-0.459,0.572-0.416c0.272,0.043,0.459,0.299,0.416,0.572 c-0.074,0.471-0.112,0.953-0.112,1.434c0,0.472,0.037,0.943,0.109,1.402c0.043,0.273-0.144,0.529-0.416,0.572 C33.713,51.019,33.687,51.021,33.66,51.021z"></path><path fill="#1f212b" d="M41.457,58.914c-0.028,0-0.057-0.002-0.085-0.007c-3.442-0.585-6.372-2.975-7.646-6.238 c-0.101-0.257,0.026-0.547,0.284-0.647c0.256-0.101,0.547,0.027,0.647,0.284c1.146,2.938,3.783,5.089,6.882,5.615 c0.271,0.046,0.455,0.305,0.409,0.577C41.907,58.741,41.696,58.914,41.457,58.914z"></path>
+                    </svg> -->
+                        <span class="screenreader">github</span>
+
+                        <a href="https://github.com/xing-angela">GitHub</a>
+                    </li>
+                    <li>
+                        <svg aria-hidden="true" height="20" width="20" xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-school" viewBox="0 0 24 24" stroke-width="1.6"
+                            stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6"></path>
+                            <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4"></path>
+                        </svg>
+                        <!-- <svg aria-hidden="true" height="26" width="26" xmlns="http://www.w3.org/2000/svg" class="icon icon-color-hand-drawn" x="0px" y="0px" viewBox="0 0 100 100" stroke-width="1.8" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon fill="#565fa1" points="1,39.002 49.999,16 99,38.996 49.999,62 15,45.573 14.575,46.479 7.575,43.193 8,42.288"></polygon><path fill="#a3a3cd" d="M50,34.065c-10.853,0-27,1.963-27,7.37V41.5c0,0.072,0,4.482,0,9.5c0,6.706,0,14.5,0,14.5h54	c0,0,0-8.596,0-15.5l0,0v-7.42c0-0.668,0-1.059,0-1.08v-0.065C77,36.028,60.853,34.065,50,34.065z"></path><path fill="#1f212b" d="M11.5,57c-0.276,0-0.5-0.224-0.5-0.5v-17c0-0.276,0.224-0.5,0.5-0.5s0.5,0.224,0.5,0.5v17	C12,56.776,11.776,57,11.5,57z"></path><ellipse cx="50" cy="65.75" fill="#565fa1" rx="26.5" ry="6.25"></ellipse><path fill="#1f212b" d="M77,65.5h-1c0-2.602-10.678-5.5-26-5.5s-26,2.898-26,5.5h-1c0-4.222,13.911-6.5,27-6.5	S77,61.278,77,65.5z"></path><path fill="#1f212b" d="M50,73c-13.914,0-28-2.576-28-7.5h2c0,2.243,10.129,5.5,26,5.5s26-3.257,26-5.5h2	C78,70.424,63.914,73,50,73z"></path><path fill="#fef6aa" d="M16.5,73.5c0,4.167-5,11-5,11s-5-6.833-5-11c0-2.761,2.239-5,5-5S16.5,70.739,16.5,73.5z"></path><path fill="#1f212b" d="M11.5,85c-0.159,0-0.31-0.076-0.403-0.205C10.889,84.511,6,77.781,6,73.5c0-3.033,2.468-5.5,5.5-5.5	s5.5,2.467,5.5,5.5c0,4.281-4.889,11.011-5.097,11.295C11.81,84.924,11.659,85,11.5,85z M11.5,69C9.019,69,7,71.019,7,73.5	c0,3.273,3.326,8.417,4.5,10.129C12.674,81.917,16,76.773,16,73.5C16,71.019,13.981,69,11.5,69z"></path><path fill="#f9e65c" d="M14.5,69.5h-6v-2c0-1.105,0.895-2,2-2h2c1.105,0,2,0.895,2,2V69.5z"></path><path fill="#1f212b" d="M14.5,70h-6C8.224,70,8,69.776,8,69.5v-2c0-1.378,1.121-2.5,2.5-2.5h2c1.379,0,2.5,1.122,2.5,2.5v2	C15,69.776,14.776,70,14.5,70z M9,69h5v-1.5c0-0.827-0.673-1.5-1.5-1.5h-2C9.673,66,9,66.673,9,67.5V69z"></path><path fill="#1f212b" d="M77,66.5c-0.553,0-1-0.448-1-1V49.324c0-0.388,0.224-0.74,0.575-0.905l20.071-9.423L49.999,17.104	L3.354,39.002l5.071,2.38c0.5,0.235,0.715,0.83,0.48,1.33c-0.234,0.5-0.828,0.715-1.33,0.48l-7-3.286C0.225,39.743,0,39.39,0,39.002	s0.224-0.74,0.575-0.905l48.999-23.002c0.27-0.126,0.58-0.126,0.85,0l49.001,22.996c0.351,0.165,0.575,0.518,0.575,0.905	s-0.224,0.74-0.575,0.905L78,49.959V65.5C78,66.052,77.553,66.5,77,66.5z"></path><path fill="#1f212b" d="M77,66.5L77,66.5c-0.552,0-1-0.448-1-1V49.324c0-0.388,0.224-0.74,0.575-0.905l20.071-9.423	L49.999,17.104L3.354,39.002l5.071,2.38c0.5,0.235,0.715,0.83,0.48,1.33c-0.235,0.5-0.831,0.715-1.33,0.48l-7-3.286	C0.224,39.743,0,39.39,0,39.002s0.224-0.74,0.575-0.905l48.999-23.002c0.269-0.126,0.58-0.126,0.85,0l49.001,22.996	c0.351,0.165,0.575,0.518,0.575,0.905s-0.224,0.74-0.575,0.905L78,49.959V65.5C78,66.052,77.552,66.5,77,66.5z"></path><path fill="#1f212b" d="M23,66.5c-0.552,0-1-0.448-1-1V49.963l-7.425-3.485c-0.5-0.235-0.715-0.83-0.48-1.33	c0.235-0.501,0.83-0.716,1.33-0.48l8,3.755C23.776,48.587,24,48.94,24,49.328V65.5C24,66.052,23.552,66.5,23,66.5z"></path><path fill="#1f212b" d="M11.5,61c-0.276,0-0.5-0.224-0.5-0.5v-1.125c0-0.276,0.224-0.5,0.5-0.5s0.5,0.224,0.5,0.5V60.5	C12,60.776,11.776,61,11.5,61z"></path><path fill="#1f212b" d="M11.5,66c-0.276,0-0.5-0.224-0.5-0.5v-3c0-0.276,0.224-0.5,0.5-0.5s0.5,0.224,0.5,0.5v3	C12,65.776,11.776,66,11.5,66z"></path><path fill="#1f212b" d="M59.501,35.513c-0.017,0-0.032-0.001-0.049-0.002c-1.578-0.152-3.252-0.267-4.975-0.343	c-0.275-0.012-0.489-0.246-0.477-0.521c0.012-0.275,0.195-0.509,0.521-0.478c1.739,0.077,3.43,0.193,5.025,0.347	c0.275,0.026,0.477,0.271,0.45,0.545C59.973,35.32,59.755,35.513,59.501,35.513z"></path><path fill="#1f212b" d="M64.501,36.146c-0.027,0-0.054-0.002-0.081-0.006c-0.96-0.155-1.959-0.291-2.979-0.414	c-0.274-0.033-0.47-0.282-0.437-0.556c0.033-0.275,0.287-0.466,0.556-0.437c1.034,0.125,2.047,0.262,3.021,0.419	c0.272,0.044,0.458,0.301,0.413,0.573C64.954,35.972,64.741,36.146,64.501,36.146z"></path><path fill="#1f212b" d="M67.5,36.702c-0.035,0-0.07-0.003-0.106-0.012c-0.213-0.046-0.436-0.089-0.658-0.131l-0.332-0.064	c-0.271-0.054-0.447-0.316-0.394-0.587s0.319-0.448,0.587-0.394l0.327,0.063c0.23,0.044,0.462,0.088,0.683,0.137	c0.27,0.059,0.441,0.325,0.382,0.595C67.938,36.542,67.73,36.702,67.5,36.702z"></path><path fill="#1f212b" d="M76.5,51.5c-0.276,0-0.5-0.224-0.5-0.5v-9.565c0-1.591-2.354-3.106-6.631-4.265	c-0.267-0.072-0.424-0.347-0.352-0.613c0.072-0.266,0.344-0.426,0.613-0.352C74.521,37.53,77,39.29,77,41.435V51	C77,51.276,76.776,51.5,76.5,51.5z"></path><path fill="#1f212b" d="M23.5,51.5c-0.276,0-0.5-0.224-0.5-0.5v-9.565c0-5.407,16.146-7.37,27-7.37l0.503,0.006	c0.276,0.001,0.499,0.227,0.497,0.503c-0.002,0.276-0.255,0.501-0.503,0.497L50,35.065c-14.337,0-26,2.857-26,6.37V51	C24,51.276,23.776,51.5,23.5,51.5z"></path>
+                    </svg> -->
+                        <span class="screenreader">google scholar</span>
+
+                        <a href="https://scholar.google.com/citations?user=BD0U8hcAAAAJ&hl=en&oi=ao">Google Scholar</a>
+                    </li>
+                    <!-- <li>
+                    <svg aria-hidden="true" height="20" width="20" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-text" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M14 3v4a1 1 0 0 0 1 1h4"></path><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path><path d="M9 9l1 0"></path><path d="M9 13l6 0"></path><path d="M9 17l6 0"></path>
+                    </svg>
+                    <svg aria-hidden="true" height="26" width="26" xmlns="http://www.w3.org/2000/svg" class="icon icon-color-hand-drawn" x="0px" y="0px" viewBox="0 0 100 100" stroke-width="1.8" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path fill="#fefdef" d="M78.921,29.555C71.047,21.68,66.548,17.182,58.674,9.307H39.859h-9.105h-2.833h-1.268c-4.803,0-8.732,3.93-8.732,8.732v61.535c0,4.803,3.93,8.732,8.732,8.732h43.535c4.803,0,8.732-3.93,8.732-8.732V29.555z"></path><path fill="#1f212b" d="M70.189,89.307H26.654c-5.366,0-9.732-4.366-9.732-9.732V18.04c0-5.367,4.366-9.732,9.732-9.732h32.021c0.266,0,0.52,0.105,0.707,0.293l20.247,20.248c0.188,0.188,0.293,0.442,0.293,0.707v50.02C79.921,84.941,75.555,89.307,70.189,89.307z M26.654,10.307c-4.264,0-7.732,3.469-7.732,7.732v61.535c0,4.264,3.469,7.732,7.732,7.732h43.535c4.264,0,7.732-3.469,7.732-7.732V29.969L58.26,10.307H26.654z"></path><path fill="#fef6aa" d="M58.421,9.807v10.986c0,4.958,4.056,9.014,9.014,9.014h11.986"></path><path fill="#1f212b" d="M79.421 30.307H67.436c-5.246 0-9.515-4.268-9.515-9.515V9.807c0-.276.224-.5.5-.5s.5.224.5.5v10.985c0 4.695 3.819 8.515 8.515 8.515h11.985c.276 0 .5.224.5.5S79.698 30.307 79.421 30.307zM73.421 48.307c-.276 0-.5-.224-.5-.5v-3c0-.276.224-.5.5-.5s.5.224.5.5v3C73.921 48.083 73.698 48.307 73.421 48.307zM73.421 56.307c-.276 0-.5-.224-.5-.5v-6c0-.276.224-.5.5-.5s.5.224.5.5v6C73.921 56.083 73.698 56.307 73.421 56.307zM66.263 83.307H30.579c-4.223 0-7.658-3.45-7.658-7.689V22.955c0-2.458 1.193-4.79 3.193-6.238 1.31-.949 2.854-1.451 4.465-1.451.276 0 .5.224.5.5s-.224.5-.5.5c-1.398 0-2.74.436-3.879 1.261-1.74 1.262-2.779 3.291-2.779 5.429v52.663c0 3.688 2.987 6.689 6.658 6.689h35.684c3.671 0 6.658-3.001 6.658-6.689V57.807c0-.276.224-.5.5-.5s.5.224.5.5v17.811C73.921 79.857 70.486 83.307 66.263 83.307z"></path><path fill="#1f212b" d="M49.421 52.307h-21c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h21c.276 0 .5.224.5.5S49.698 52.307 49.421 52.307zM41.421 59.307h-13c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h13c.276 0 .5.224.5.5S41.698 59.307 41.421 59.307zM68.421 59.307h-24c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h24c.276 0 .5.224.5.5S68.698 59.307 68.421 59.307zM59.421 66.307h-11c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h11c.276 0 .5.224.5.5S59.698 66.307 59.421 66.307zM69.421 66.307h-8c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h8c.276 0 .5.224.5.5S69.698 66.307 69.421 66.307zM45.421 66.307h-17c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h17c.276 0 .5.224.5.5S45.698 66.307 45.421 66.307zM68.421 73.307h-14c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14c.276 0 .5.224.5.5S68.698 73.307 68.421 73.307zM52.421 73.307h-24c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h24c.276 0 .5.224.5.5S52.698 73.307 52.421 73.307zM49.421 45.307h-21c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h21c.276 0 .5.224.5.5S49.698 45.307 49.421 45.307z"></path><path fill="#fef6aa" d="M52.421 51.807L52.421 37.807 68.421 37.807 68.421 53.807 56.421 53.807"></path><path fill="#1f212b" d="M68.421 54.307h-12c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h11.5v-15h-15v13.5c0 .276-.224.5-.5.5s-.5-.224-.5-.5v-14c0-.276.224-.5.5-.5h16c.276 0 .5.224.5.5v16C68.921 54.083 68.698 54.307 68.421 54.307zM49.421 38.307h-21c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h21c.276 0 .5.224.5.5S49.698 38.307 49.421 38.307z"></path>
+                    </svg>
+                    <span class="screenreader">c v</span>
+
+                    <a href="href=assets/vita.pdf">CV</a>
+                </li> -->
+                    <li>
+                        <svg aria-hidden="true" height="20" width="20" xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-mail" viewBox="0 0 24 24" stroke-width="1.6"
+                            stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M3 5m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z">
+                            </path>
+                            <path d="M3 7l9 6l9 -6"></path>
+                        </svg>
+                        <!-- <svg aria-hidden="true" height="26" width="26" xmlns="http://www.w3.org/2000/svg" class="icon icon-color-hand-drawn" x="0px" y="0px" viewBox="0 0 100 100" stroke-width="1.8" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path fill="#fefdef" d="M80,77H20c-3.314,0-6-2.686-6-6V29c0-3.314,2.686-6,6-6h60c3.314,0,6,2.686,6,6v42	C86,74.314,83.314,77,80,77z"></path><path fill="#f15b6c" d="M23,77h-3c-3.314,0-6-2.686-6-6V29h9V77z"></path><path fill="#f15b6c" d="M77,77h3c3.314,0,6-2.686,6-6V29h-9V77z"></path><path fill="#f15b6c" d="M82.09,24h-0.004L50,47.5L17.914,24H17.91c-1.883,0-3.41,1.527-3.41,3.41v1.554	c0,1.594,0.76,3.092,2.046,4.034L50,57.5l33.454-24.502c1.286-0.942,2.046-2.44,2.046-4.034V27.41C85.5,25.527,83.973,24,82.09,24z"></path><path fill="#1f212b" d="M80,78H20c-3.859,0-7-3.14-7-7V29c0-3.86,3.141-7,7-7h60c3.859,0,7,3.14,7,7v42	C87,74.86,83.859,78,80,78z M20,24c-2.757,0-5,2.243-5,5v42c0,2.757,2.243,5,5,5h60c2.757,0,5-2.243,5-5V29c0-2.757-2.243-5-5-5H20z"></path><path fill="#1f212b" d="M50,58c-0.104,0-0.207-0.032-0.296-0.097L16.25,33.401C14.842,32.37,14,30.711,14,28.964h1	c0,1.429,0.688,2.786,1.841,3.63L50,56.88l33.158-24.286C84.312,31.75,85,30.394,85,28.964h1c0,1.747-0.842,3.406-2.251,4.437	L50.296,57.903C50.207,57.968,50.104,58,50,58z"></path><path fill="#1f212b" d="M22.5,74c-0.276,0-0.5-0.224-0.5-0.5v-33c0-0.276,0.224-0.5,0.5-0.5s0.5,0.224,0.5,0.5v33	C23,73.776,22.776,74,22.5,74z"></path><path fill="#1f212b" d="M77.5,62c-0.276,0-0.5-0.224-0.5-0.5v-21c0-0.276,0.224-0.5,0.5-0.5s0.5,0.224,0.5,0.5v21	C78,61.776,77.776,62,77.5,62z"></path><path fill="#1f212b" d="M77.5,70c-0.276,0-0.5-0.224-0.5-0.5v-5c0-0.276,0.224-0.5,0.5-0.5s0.5,0.224,0.5,0.5v5	C78,69.776,77.776,70,77.5,70z"></path><path fill="#1f212b" d="M77.5,74c-0.276,0-0.5-0.224-0.5-0.5v-1c0-0.276,0.224-0.5,0.5-0.5s0.5,0.224,0.5,0.5v1	C78,73.776,77.776,74,77.5,74z"></path><path fill="#1f212b" d="M74.5,30.056c-0.153,0-0.306-0.071-0.403-0.205c-0.163-0.223-0.115-0.536,0.108-0.699l2-1.464	c0.221-0.164,0.535-0.116,0.698,0.108c0.163,0.223,0.115,0.536-0.108,0.699l-2,1.464C74.706,30.025,74.603,30.056,74.5,30.056z"></path><path fill="#1f212b" d="M68.5,34.451c-0.153,0-0.306-0.071-0.403-0.205c-0.163-0.223-0.115-0.536,0.107-0.699l4-2.93	c0.223-0.164,0.536-0.116,0.699,0.108c0.163,0.223,0.115,0.536-0.107,0.699l-4,2.93C68.706,34.419,68.603,34.451,68.5,34.451z"></path><path fill="#1f212b" d="M50,48c-0.104,0-0.207-0.032-0.296-0.097l-32.428-23.75c-0.223-0.163-0.271-0.476-0.107-0.699	c0.163-0.224,0.477-0.271,0.699-0.108L50,46.88l16.089-11.784c0.224-0.164,0.536-0.116,0.699,0.108	c0.163,0.223,0.115,0.536-0.107,0.699l-16.385,12C50.207,47.968,50.104,48,50,48z"></path>
+                    </svg> -->
+                        <span class="screenreader">email</span>
+
+                        <span id="emaddress">
+                            <noscript><i>enable javascript to view</i></noscript>
+                        </span>
+                        <script>
+                            emscramble = new scrambledString(document.getElementById("emaddress"),
+                                "emscramble", "TeiAO gga bodw eunnanrxl T_D",
+                                [23, 3, 8, 12, 22, 11, 2, 10, 0, 14, 15, 17, 26, 18, 24, 25, 27, 9, 1, 5, 19, 16, 7, 4, 20, 13, 6, 21]);
+                        </script>
+                    </li>
+                </ul>
+
+                <h3>about</h3>
+                <hr>
+                <div class="bio justify">
+                    <p>
+                        I am a Masters student at <a href="https://www.brown.edu/">Brown University</a> studying CS. I
+                        work with <a href="https://cs.brown.edu/people/ssrinath/">Prof. Srinath Sridhar</a> at the
+                        <a href="https://ivl.cs.brown.edu/">Interactive 3D Vision & Learning Lab (IVL)</a>. My research
+                        interests are in 3D computer vision, specifically, <span class="research-tag">dynamic 3D
+                            reconstruction</span> and <span class="research-tag">hand-object interaction</span>.
+                    </p>
+                    <br />
+                    <p>
+                        I recently graduated from Brown University (2024) with a BS in Computer Science. During my
+                        undergraduate years at Brown, I was a varsity athlete on the <a href="">Brown Women's Gymnastics
+                            Team</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="news-container">
+            <h3>recent</h3>
+            <hr>
+            <div class="indent">
+                <div class="news-date">Fall 2023</div>
+                <div>TA for <a href="https://16-831.github.io">16-831: Robot Learning</a></div>
+                <br />
+                <div class="news-date">Aug 2022</div>
+                <div>Started my PhD at Carnegie Mellon University</div>
+            </div>
+        </div> -->
+
+        <!-- <div class="writing-container">
+            <h3>writing</h3>
+            <hr>
+            <div class="indent">
+                <div class="news-date">Jan 2000</div>
+                <div><a href="">post1</a></div>
+            </div>
+        </div> -->
+
+        <div class="pub-container">
+            <h3>publications</h3>
+            <hr>
+            <div class="indent" style="font-size: 1.2rem;">
+                <p style="display: block;">* <i>equal contribution</i></p>
+            </div>
+            <div class="pubs">
+                <div class="pub">
+                    <div class="pub-visual">
+                        <img src="assets/pub/diva.gif" alt="" />
+                    </div>
+                    <div class="pub-info">
+                        <div class="pub-title">
+                            <a href="https://ivl.cs.brown.edu/research/diva">
+                                DiVa-360: The Dynamic Visual Dataset for Immersive Neural Fields
+                            </a>
+                        </div>
+                        <div class="pub-authors">
+                            Chen-You Lu*, Peisen Zhou*, <b>Angela Xing*</b>, Chandradeep Pokhariya, Arnab Dey, Ishaan N
+                            Shah, Rugved Mavidipalli, Dylan Hu, Andrew Comport, Kefan Chen, Srinath Sridhar
+                        </div>
+                        <div class="pub-booktitle">
+                            <p>CVPR 2024</p> &ensp;<b class="pub-highlight">Highlight</b>
+                        </div>
+                        <div class="pub-links">
+                            <a href="https://arxiv.org/abs/2307.16897">pdf</a>
+                            /
+                            <a href="https://github.com/brown-ivl/DiVa360">code</a>
+                            /
+                            <a href="https://youtu.be/obeSJTUlXUs?si=RUdS9pbtJYHZLHkL">video</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub">
+                    <div class="pub-visual">
+                        <img src="assets/pub/manus-small.gif" alt="" />
+                    </div>
+                    <div class="pub-info">
+                        <div class="pub-title">
+                            <a href="https://ivl.cs.brown.edu/research/manus.html">
+                                MANUS: Markerless Grasp Capture using Articulated 3D Gaussians
+                            </a>
+                        </div>
+                        <div class="pub-authors">
+                            Chandradeep Pokhariya, Ishaan Nikhil Shah*, <b>Angela Xing*</b>, Zekun Li, Kefan Chen,
+                            Avinash Sharma, Srinath Sridhar
+                        </div>
+                        <div class="pub-booktitle">
+                            <p>CVPR 2024</p>
+                        </div>
+                        <div class="pub-links">
+                            <a href="https://arxiv.org/abs/2312.02137">pdf</a>
+                            /
+                            <a href="https://github.com/brown-ivl/manus">code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        <footer>
+            <div style="font-size: 1.4rem;">
+                Template from <a href="https://etaoxing.com/">this guy</a>.
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
